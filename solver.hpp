@@ -5,7 +5,7 @@ using namespace std;
 
 namespace solver
 {
-    /********Class for REAL VARIABLES in equations for example x^2 + 3*x - 4*********/
+    /********Class for REAL VARIABLES in equations*********/
 
     class RealVariable
     {
@@ -46,7 +46,7 @@ namespace solver
     }; 
 
 
-    /*********Class for COMPLEX VARIABLES in equations for example 2*y+3i*********/
+    /*********Class for COMPLEX VARIABLES in equations*********/
 
     class ComplexVariable
     {
