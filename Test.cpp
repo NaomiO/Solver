@@ -9,17 +9,21 @@ TEST_CASE("Test find bad input"){
   RealVariable x;
 
     CHECK((solve(2*x-4 == 10)) == 7);
-    CHECK((solve((x^2) == 16) == 4) || solve((x^2) == 16) == -4);
-    CHECK_THROWS((solve((x^2) == -16));
-    CHECK((solve((x^2) + 2*x + 4.0 == 20 + 6.0*x/2 - x) == 4 || solve((x^2) + 2*x + 4.0 == 20 + 6.0*x/2 - x) == -4);
+    CHECK((solve((x^2) == 16) == 4) || (solve((x^2) == 16) == -4));
+    CHECK_THROWS( solve( (x^2) == -16) );
+    CHECK( (solve((x^2) + 2*x + 4.0 == 20 + 6.0*x/2 - x) == 4) || (solve((x^2) + 2*x + 4.0 == 20 + 6.0*x/2 - x) == -4));
     CHECK((solve(2*x-4 == 10)) == 7);
     }
+ TEST_CASE("Test for complex variables"){
 
   ComplexVariable y;
-    std::complex<double> yvalue = solve(2*y-4 == 10);
-    cout << yvalue << endl;  // 7+0i  (can be in any other format)
-
-    cout << solve((y^2) == 16) << endl;   // 4+0i or -4+0i
-    cout << solve((y^2) == -16) << endl;  // 0+4i or 0-4i
-    cout << solve((y^2) + 2*y + 4 == 20 + 6*y/2 - y) << endl;   // 4+0i or -4+0i
-    cout << solve(y+5i == 2*y+3i) << endl;   // 0+2i
+  
+    CHECK( (solve((y^2) == 16) == complex<double>(4,0) ) );
+    CHECK( (solve((y^2) == 16) == complex<double>(-4,0) ) ); 
+    CHECK( (solve((y^2) == -16) == complex<double>(0,4) ) ); 
+    CHECK( (solve((y^2) == -16) == complex<double>(0,-4) ) ); 
+    CHECK( (solve((y^2) + 2*y + 4 == 20 + 6*y/2 - y) == complex<double>(4,0) ) ); 
+    CHECK( (solve((y^2) + 2*y + 4 == 20 + 6*y/2 - y) == complex<double>(-4,0) ) ); 
+    CHECK( (solve(y+5i == 2*y+3i) == complex<double>(0,2) ) ); 
+    
+ }
