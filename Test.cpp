@@ -15,7 +15,7 @@ TEST_CASE("Test for real variables"){
     CHECK((solve(x == 1)) == 1);
     CHECK((solve(x == -1)) == -1);
     CHECK((solve(2*x == 10)) == 5);
-    CHECK((solve(2*x == -10)) == -5);
+    CHECK((solve(2*x == -10)) == -5); 
     CHECK((solve(-2*x == 10)) == -5);
     CHECK((solve(-2*x == -10)) == 5);
     CHECK((solve(2*x-4 == 10)) == 7);
