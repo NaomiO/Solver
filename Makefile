@@ -11,6 +11,7 @@ STUDENT_OBJECTS := $(subst .cpp,.o,$(STUDENT_SOURCES))
 run: demo
 	./$^
 
+
 demo: Demo.o $(STUDENT_OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o demo
 
