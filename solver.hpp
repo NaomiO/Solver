@@ -9,11 +9,22 @@ namespace solver
 
     class RealVariable
     {
-        double num; 
-
+    double a, b, c;
+    
     public:
         RealVariable();             
-        RealVariable(double num);
+        RealVariable(double a, double b, double c);
+    
+     const double & getA () const{
+        return this->a;
+    }
+    const double & getB () const{
+        return b;
+    }
+    const double & getC () const{
+        return c;
+    }
+        
 
         //Operator+ for addition
         friend RealVariable& operator+(const double num, RealVariable& x); 
@@ -55,6 +66,20 @@ namespace solver
     public:
         ComplexVariable();
         ComplexVariable(double real,double imag);
+
+        complex <double> a;
+        complex <double> b;
+        complex <double> c;
+
+         ComplexVariable(complex <double> a,complex <double> b,complex <double> c){
+            this->a = complex<double>(a);
+            this->b = complex<double>(b);
+            this->c = complex<double>(c);
+        }
+
+        const complex<double> &getA () const { return a; }
+        const complex<double> &getB () const { return b; }
+        const complex<double> &getC () const { return c; }
         
         //Operator+ for addition
         friend ComplexVariable& operator+(const double num, ComplexVariable& y); 
