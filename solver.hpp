@@ -25,7 +25,7 @@ namespace solver
     const double & getC () const{
         return c;
     }
-        
+        ///////////////////////////////const + non &
 
         //Operator+ for addition
         friend RealVariable& operator+(const double num, RealVariable& x); 
