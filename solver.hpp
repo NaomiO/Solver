@@ -14,6 +14,8 @@ namespace solver
     public:
         RealVariable();             
         RealVariable(double a, double b, double c);
+        RealVariable(): a(0), b(1), c(0) {}
+
     
      const double & getA () const{
         return this->a;
@@ -65,7 +67,7 @@ namespace solver
 
     public:
         ComplexVariable();
-        ComplexVariable(double real,double imag);
+        ComplexVariable(): a(0), b(1,0), c(0) {}
 
         complex <double> a;
         complex <double> b;
@@ -122,9 +124,9 @@ namespace solver
     }; 
 
     //Function to solve equations with real variables
-    double solve(RealVariable &exercise);
+    double solve(const RealVariable &exercise);
     
     //Function to solve equations with complex variables
-    std::complex<double> solve(ComplexVariable &exercise);
+    std::complex<double> solve(const ComplexVariable &exercise);
 
 }; 
