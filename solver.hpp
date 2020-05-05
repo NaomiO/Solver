@@ -12,7 +12,6 @@ namespace solver
     double a, b, c;
     
     public:
-        RealVariable();             
         RealVariable(double a, double b, double c);
         RealVariable(): a(0), b(1), c(0) {}
 
