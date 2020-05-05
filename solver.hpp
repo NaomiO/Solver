@@ -66,7 +66,6 @@ namespace solver
         double real,imag;
 
     public:
-        ComplexVariable();
         ComplexVariable(): a(0), b(1,0), c(0) {}
 
         complex <double> a;
